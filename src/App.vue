@@ -1,17 +1,19 @@
 <template>
   <!--  <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
+  <Nav/>
   <TodoApp/>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import TodoApp from "@/components/TodoApp.vue";
+import TodoApp from "@/components/HelloWord/TodoApp.vue";
+import Nav from "@/components/Nav/Nav.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
-    TodoApp,
+    TodoApp,Nav
   }
 });
 </script>

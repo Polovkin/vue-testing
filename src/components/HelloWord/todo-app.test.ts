@@ -1,6 +1,7 @@
 import {mount} from '@vue/test-utils'
-import TodoApp from '@/components/TodoApp.vue'
-import {TEST_NAMES} from "@/components/types";
+import TodoApp from '@/components/HelloWord/TodoApp.vue'
+import {TEST_NAMES} from "@/components/HelloWord/types";
+
 function dataTest(name: string): string {
     return `[data-test="${name}"]`
 }
@@ -29,4 +30,12 @@ test('creates a todo', async () => {
     await wrapper.get(formName).trigger('submit')
 
     expect(wrapper.findAll(todoName)).toHaveLength(2)
+})
+
+test('completes a todo', async () => {
+    const wrapper = mount(TodoApp)
+
+    await wrapper.get('[data-test="todo-checkbox"]').setValue(true)
+
+    expect(wrapper.get('[data-test="todo"]').classes()).toContain('completed')
 })
