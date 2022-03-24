@@ -1,4 +1,5 @@
 <template>
+  <p>Count: {{ count }}</p>
   <button @click="handleClick">Increment</button>
 </template>
 

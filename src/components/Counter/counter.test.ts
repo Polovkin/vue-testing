@@ -1,11 +1,12 @@
 import {mount} from "@vue/test-utils";
 import Counter from './Counter.vue'
+import {nextTick} from "vue";
 
-test('emits an event with count when clicked', () => {
+test('emits an event with count when clicked', async () => {
     const wrapper = mount(Counter)
 
-    wrapper.find('button').trigger('click')
-    wrapper.find('button').trigger('click')
+    await wrapper.find('button').trigger('click')
+    await wrapper.find('button').trigger('click')
 
     const incrementEvent = wrapper.emitted('increment')
 
@@ -27,7 +28,6 @@ test('emits an event with count when clicked', () => {
         ])
 
     }
-
-
+    expect(wrapper.html()).toContain('Count: 2')
 
 })
