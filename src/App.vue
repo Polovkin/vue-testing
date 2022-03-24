@@ -1,22 +1,18 @@
 <template>
   <!--  <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
-  <Password/>
-  <Nav/>
-  <TodoApp/>
+  <h1>asd</h1>
+  <TransitionComponent/>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import TodoApp from "@/components/HelloWord/TodoApp.vue";
-import Nav from "@/components/Nav/Nav.vue";
-import Password from "@/components/Password/Password.vue";
+import TransitionComponent from "@/components/Transition/TransitionComponent.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
-    Password,
-    TodoApp,Nav
+    TransitionComponent
   }
 });
 </script>

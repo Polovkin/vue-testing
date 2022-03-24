@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "Password",
+  name: "Password-test",
   props: {
     minLength: {
       type: Number
@@ -23,7 +23,7 @@ export default {
       if (this.password.length < this.minLength) {
         return `Password must be at least ${this.minLength} characters.`
       }
-      return
+      return ''
     }
   }
 }
