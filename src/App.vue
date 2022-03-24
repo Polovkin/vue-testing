@@ -1,6 +1,7 @@
 <template>
   <!--  <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
+  <Password/>
   <Nav/>
   <TodoApp/>
 </template>
@@ -9,10 +10,12 @@
 import {defineComponent} from 'vue';
 import TodoApp from "@/components/HelloWord/TodoApp.vue";
 import Nav from "@/components/Nav/Nav.vue";
+import Password from "@/components/Password/Password.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
+    Password,
     TodoApp,Nav
   }
 });

@@ -15,7 +15,7 @@
 import {defineComponent} from 'vue';
 
 export default defineComponent({
-  name: "Nav",
+  name: "Nav-test",
   data() {
     return {
       admin: false,
