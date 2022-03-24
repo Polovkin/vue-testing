@@ -1,18 +1,17 @@
 <template>
   <!--  <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
-  <h1>asd</h1>
-  <TransitionComponent/>
+  <StoreCounter/>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import TransitionComponent from "@/components/Transition/TransitionComponent.vue";
+import StoreCounter from "@/components/StoreCounter/StoreCounter.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
-    TransitionComponent
+    StoreCounter,
   }
 });
 </script>
