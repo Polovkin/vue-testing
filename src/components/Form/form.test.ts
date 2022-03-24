@@ -16,6 +16,7 @@ test('submits the form', async () => {
 
     await wrapper.find('form').trigger('submit.prevent')
 
+
     // @ts-ignore
     expect(wrapper.emitted('submit')[0][0]).toStrictEqual({
         email,
