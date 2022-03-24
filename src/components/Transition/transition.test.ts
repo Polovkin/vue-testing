@@ -1,8 +1,8 @@
-import Component from './Component.vue'
+import TransitionComponent from './TransitionComponent.vue'
 import { mount } from '@vue/test-utils'
 
 test('works with transitions', async () => {
-    const wrapper = mount(Component)
+    const wrapper = mount(TransitionComponent)
 
     expect(wrapper.find('hello').exists()).toBe(false)
 
