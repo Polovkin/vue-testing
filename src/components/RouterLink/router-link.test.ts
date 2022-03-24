@@ -1,0 +1,58 @@
+import { mount } from '@vue/test-utils';
+import RouterLink from './RouterLink.vue'
+
+test('allows authenticated user to edit a post', async () => {
+    const mockRoute = {
+        params: {
+            id: 1
+        }
+    }
+    const mockRouter = {
+        push: jest.fn()
+    }
+
+    const wrapper = mount(RouterLink, {
+        props: {
+            isAuthenticated: true
+        },
+        global: {
+            mocks: {
+                $route: mockRoute,
+                $router: mockRouter
+            }
+        }
+    })
+
+    await wrapper.find('button').trigger('click')
+
+    expect(mockRouter.push).toHaveBeenCalledTimes(1)
+    expect(mockRouter.push).toHaveBeenCalledWith('/posts/1/edit')
+})
+
+test('redirect an unauthenticated user to 404', async () => {
+    const mockRoute = {
+        params: {
+            id: 1
+        }
+    }
+    const mockRouter = {
+        push: jest.fn()
+    }
+
+    const wrapper = mount(RouterLink, {
+        props: {
+            isAuthenticated: false
+        },
+        global: {
+            mocks: {
+                $route: mockRoute,
+                $router: mockRouter
+            }
+        }
+    })
+
+    await wrapper.find('button').trigger('click')
+
+    expect(mockRouter.push).toHaveBeenCalledTimes(1)
+    expect(mockRouter.push).toHaveBeenCalledWith('/404')
+})
